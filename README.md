@@ -11,6 +11,14 @@ Android スマートフォンを、Bluetooth 接続の外付け**ハードウェ
 
 キー配列（JIS 配列・120 キー分）は、元のファームウェアの `keymap.h` から `tools/gen_keymap.py` で機械生成しています。Shift の自動付与、Fn での F1〜F10、6 キーロールオーバーといった入力処理も、元のファームウェア（`switches.c`）の動作に合わせています。
 
+## 紹介動画
+
+画像をクリックすると、GitHub 上で動画（62 秒、BGM あり）を再生できます。
+
+[![紹介動画（クリックで再生）](docs/promo-thumb.jpg)](docs/promo.mp4)
+
+PC 側の画面は、実機の入力ログから再現した「イメージ」です。
+
 ## 特徴
 
 - **Bluetooth HID キーボード**: Android の `BluetoothHidDevice`（Android 9 / API 28 以上）で登録します。IME（ソフトキーボード）ではありません。
