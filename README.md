@@ -13,9 +13,9 @@ Android スマートフォンを、Bluetooth 接続の外付け**ハードウェ
 
 ## 紹介動画
 
-画像をクリックすると、GitHub 上で動画（62 秒、BGM あり）を再生できます。
+画像をクリックすると [Releases](https://github.com/poropi/mozc-conveyorbelt-android/releases/tag/v1.0) のページが開きます。そこから動画（`promo.mp4`、62 秒、BGM あり）をダウンロードして再生できます。
 
-[![紹介動画（クリックで再生）](docs/promo-thumb.jpg)](docs/promo.mp4)
+[![紹介動画（クリックで Releases へ）](docs/promo-thumb.jpg)](https://github.com/poropi/mozc-conveyorbelt-android/releases/tag/v1.0)
 
 PC 側の画面は、実機の入力ログから再現した「イメージ」です。
 
@@ -26,6 +26,11 @@ PC 側の画面は、実機の入力ログから再現した「イメージ」�
 - **押しっぱなし**: キーを押さえている間は押された状態が続きます。Ctrl や Shift を押したまま別のキーを押せます。
 - **ひらがな／英字ボタン**: ヘッダーの「あ／A」で PC の IME を切り替えます（Mac は英数／かなキー、Windows は半角/全角キー）。
 - **自動接続**: 起動すると、前回つないだ PC へ自動で接続します。
+
+## インストール
+
+[Releases](https://github.com/poropi/mozc-conveyorbelt-android/releases/tag/v1.0) から `mozc-conveyorbelt-1.0.apk` をダウンロードして、Android 端末にインストールしてください（Android 9 以上）。
+Play ストア外のアプリなので、端末側で「提供元不明のアプリ」のインストールを許可する必要があります。APK は自己署名です。
 
 ## 使い方
 
@@ -43,10 +48,13 @@ PC 側の画面は、実機の入力ログから再現した「イメージ」�
 
 ## ビルド
 
+署名鍵がなくても debug ビルドはできます。release 署名をするときは、`keystore.properties`（`storeFile`・`storePassword`・`keyAlias`・`keyPassword`）をプロジェクト直下に置いてください。このファイルと keystore は git に入れません。
+
 Android Studio、またはコマンドラインでビルドできます（JDK 17 と Android SDK が必要です）。
 
 ```sh
-./gradlew :app:assembleDebug     # APK を作る
+./gradlew :app:assembleDebug     # debug APK を作る
+./gradlew :app:assembleRelease   # release APK を作る（署名は keystore.properties）
 ./gradlew :app:testDebugUnitTest # ユニットテスト
 ```
 

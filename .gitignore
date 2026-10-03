@@ -15,3 +15,8 @@
 local.properties
 .kotlin
 *.apk
+
+# 署名鍵（公開しない）
+keystore.properties
+*.jks
+*.keystore
